@@ -1,4 +1,64 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(20, 20, 22, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tax-form {
+  padding: 2rem;
+  margin: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+
+  box-shadow: 4px 8px 8px hsl(0deg 50% 90% / 0.39);
+}
+
+/* .row.mb-3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  } */
+
+.form-label {
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.error-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: red; /* Adjust color as needed */
+    visibility: hidden; /* Initially hidden */
+  }
+  
+  .error-icon.visible {
+    visibility: visible;
+  }
