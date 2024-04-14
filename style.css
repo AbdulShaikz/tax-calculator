@@ -17,6 +17,7 @@ body {
     rgba(0, 212, 255, 1) 100%
   );
   color: white;
+  font-size: 1.5rem;
 }
 
 .container {
@@ -34,7 +35,6 @@ body {
   margin: 1rem;
   border: 2px solid #ddd;
   border-radius: 4px;
-
   box-shadow: 4px 8px 8px hsl(0deg 50% 90% / 0.39);
 }
 
@@ -49,16 +49,66 @@ body {
   padding-right: 1rem;
 }
 
+.input-container {
+  position: relative;
+}
+
 .error-icon {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: red; /* Adjust color as needed */
-    visibility: hidden; /* Initially hidden */
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: red;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.error-icon.visible {
+  visibility: visible;
+}
+
+
+  .tooltip-inner {
+    background-color: #111119; /* Adjust background color as needed */
+    color: #fff; /* Adjust text color as needed */
+    font-size: 1rem; /* Adjust font size as needed */
   }
-  
-  .error-icon.visible {
-    visibility: visible;
-  }
+
+  .tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #fff; /* Change the color of the arrow */
+}
+
+.final-income{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.final-income>h3{
+  color: green;
+}
+
+/* .has-tooltip {
+  position: relative;
+}
+
+.tooltip-message {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.has-tooltip:hover .tooltip-message {
+  opacity: 1;
+  visibility: visible;
+}
+   */

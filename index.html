@@ -14,57 +14,179 @@
     <div class="container">
         <h1>Tax Calculator</h1>
         <form class="tax-form needs-validation" novalidate>
-          <div class="row mb-3 d-flex flex-wrap">
-            <label for="gross-annual-income" class="form-label col-form-label">Enter gross annual income</label>
-            <div class="col-sm-12">
-              <input type="text" class="form-control number-field" id="gross-annual-income" placeholder="Enter gross annual income" required>
-              <span class="error-icon invisible" data-bs-toggle="tooltip" data-bs-placement="top" title="Please enter a valid number"></span>              <div class="valid-tooltip">
-                Looks good!
-              </div>
+            <div class="row mb-3 d-flex flex-wrap">
+                <label for="gross-annual-income" class="form-label col-form-label">Enter gross annual income
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-color="red" data-bs-offset="0, 5"
+                        title="Gross Annual Income is your total salary in a year before any deductions">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+                        </svg>
+                    </span>
+                </label>
+                <div class="col-sm-12 position-relative">
+                    <!-- <span class="has-tooltip">
+                        <input type="text" class="form-control number-field" id="gross-annual-income" name="grossAnnualIncome"  placeholder="Enter gross annual income" required>
+                        <span class="tooltip-message">Please enter a valid number.</span>
+                      </span> -->
+
+                    <input type="text" class="form-control number-field" id="gross-annual-income"
+                        placeholder="Enter gross annual income" required>
+                    <span class="error-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Please enter numbers only">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                            class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+                    </span>
+
+                </div>
             </div>
-          </div>
-          <div class="row mb-3 d-flex flex-wrap">
-            <label for="extra-income" class="form-label col-form-label">Enter extra income</label>
-            <div class="col-sm-12">
-              <input type="text" class="form-control" id="extra-income" placeholder="Enter extra income from other sources">
-              <div class="invalid-tooltip">
-                Please provide a valid value.
-              </div>
+            <div class="row mb-3 d-flex flex-wrap">
+                <label for="extra-income" class="form-label col-form-label">Enter extra income
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-color="red" data-bs-offset="0, 5"
+                        title="Extra Income is Income from freelancing, investments, rentals, etc">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+                        </svg>
+                    </span>
+                </label>
+                <div class="col-sm-12 position-relative">
+                    <input type="text" class="form-control number-field" id="extra-income"
+                        placeholder="Enter extra income from other sources">
+                    <span class="error-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Please enter numbers only">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                            class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+                    </span>
+                </div>
             </div>
-          </div>
-          <div class="row mb-3 d-flex flex-wrap">
-            <label for="age-group" class="form-label col-form-label">Enter age group</label>
-            <div class="col-sm-12">
-              <select class="form-select" id="age-group" required>
-                <option value=""></option>
-                <option value="<40">&lt;40</option>
-                <option value=">=40&<60">&GreaterEqual;40 &amp; &lt;60</option>
-                <option value=">=60">&GreaterEqual;60</option>
-              </select>
-              <div class="invalid-tooltip">
-                Please select a valid age group.
-              </div>
+            <div class="row mb-3 d-flex flex-wrap">
+                <label for="age-group" class="form-label col-form-label">Enter age group
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-color="red" data-bs-offset="0, 5"
+                        title="Age group affects tax rate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+                        </svg>
+                    </span>
+                </label>
+                <div class="col-sm-12 position-relative">
+                    <select class="form-select" id="age-group" required>
+                        <option value=""></option>
+                        <option value="<40">&lt;40</option>
+                        <option value=">=40&<60">&GreaterEqual;40 &amp; &lt;60</option>
+                        <option value=">=60">&GreaterEqual;60</option>
+                    </select>
+                    <span class="error-icon" style="right: 3rem;" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Please select a valid age">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                            class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+                    </span>
+                </div>
             </div>
-          </div>
-          <div class="row mb-3 d-flex flex-wrap">
-            <label for="deductions" class="form-label col-form-label">Enter total applicable deductions</label>
-            <div class="col-sm-12">
-              <input type="text" class="form-control" id="deductions" placeholder="Enter total applicable deductions">
-              <div class="invalid-tooltip">
-                Please provide a valid deduction amount.
-              </div>
+            <div class="row mb-3 d-flex flex-wrap">
+                <label for="deductions" class="form-label col-form-label">Enter total applicable deductions
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-color="red" data-bs-offset="0, 5"
+                        title="Deductions are expenses that reduce your taxable income (medical bills, charity, etc.)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                            class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+                        </svg>
+                    </span>
+                </label>
+                <div class="col-sm-12 position-relative">
+                    <input type="text" class="form-control number-field" id="deductions"
+                        placeholder="Enter total applicable deductions">
+                    <span class="error-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Please enter numbers only">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                            class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+                    </span>
+                </div>
             </div>
-          </div>
-          <div class="col-12 text-center">
-            <button class="btn btn-primary mt-2" type="submit">Submit form</button>
-          </div>
+            <div class="col-12 text-center">
+                <button class="btn btn-primary mt-2" type="submit">Submit form</button>
+            </div>
         </form>
-      </div>
-      
+        <div class="modal fade" id="taxResultModal" tabindex="-1" aria-labelledby="taxResultModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="taxResultModalLabel">Tax Calculation Results</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="final-income mb-3">
+                            <h2>Your final income is</h2><br>
+                            <h3 id="final-income-number"></h3><br>
+                            <p>after tax deductions</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Gross Annual Income</span>
+                                <span id="gross-annual-income-result"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Extra Income</span>
+                                <span id="extra-income-result"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Deductions</span>
+                                <span id="deductions-result"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Taxable Income</span>
+                                <span id="taxable-income-result"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Tax Rate</span>
+                                <span id="tax-rate-result"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span class="fw-bold">Tax Amount</span>
+                                <span id="tax-amount-result"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="./script.js"></script>
-</body>
 
+</body>
 </html>
