@@ -1,6 +1,4 @@
-**Tax Calculator**
-
----
+## Tax Calculator
 
 ### Overview
 This repository contains a simple tax calculator web application. It allows users to input their gross annual income, extra income, age group, and deductions to calculate their taxable income and tax amount based on predefined tax rates. The application also displays the results in a modal dialog.
