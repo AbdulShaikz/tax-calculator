@@ -37,4 +37,4 @@ This repository contains a simple tax calculator web application. It allows user
 Contributions are welcome! Feel free to fork the repository and submit pull requests to suggest improvements or new features.
 
 ### Authors
-- [Abdul Shaik]([https://github.com/your_username](https://github.com/AbdulShaikz))
+- [Abdul Shaik](https://github.com/AbdulShaikz)
