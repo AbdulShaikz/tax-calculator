@@ -30,7 +30,7 @@ body {
   align-items: center;
 }
 
-.tax-form {
+.tax-form{
   padding: 2rem;
   margin: 1rem;
   border: 2px solid #ddd;
@@ -38,19 +38,19 @@ body {
   box-shadow: 4px 8px 8px hsl(0deg 50% 90% / 0.39);
 }
 
-/* .row.mb-3 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  } */
-
 .form-label {
   width: 100%;
   padding-right: 1rem;
 }
 
-.input-container {
-  position: relative;
+.tooltip-inner {
+  background-color: #111119; 
+  color: #fff; 
+  font-size: 1rem; 
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #fff; /* Change the color of the arrow */
 }
 
 .error-icon {
@@ -68,15 +68,12 @@ body {
   visibility: visible;
 }
 
+.modal {
+  background-color: transparent; 
+}
 
-  .tooltip-inner {
-    background-color: #111119; /* Adjust background color as needed */
-    color: #fff; /* Adjust text color as needed */
-    font-size: 1rem; /* Adjust font size as needed */
-  }
-
-  .tooltip.bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: #fff; /* Change the color of the arrow */
+.modal-body{
+  font-size: 1rem;
 }
 
 .final-income{
@@ -87,28 +84,6 @@ body {
   color: black;
 }
 
-.final-income>h3{
+.final-income h3{
   color: green;
 }
-
-/* .has-tooltip {
-  position: relative;
-}
-
-.tooltip-message {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-.has-tooltip:hover .tooltip-message {
-  opacity: 1;
-  visibility: visible;
-}
-   */

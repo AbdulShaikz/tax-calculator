@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1>Tax Calculator</h1>
-        <form class="tax-form needs-validation" novalidate>
+        <form class="tax-form" novalidate>
             <div class="row mb-3 d-flex flex-wrap">
                 <label for="gross-annual-income" class="form-label col-form-label">Enter gross annual income
                     <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-color="red" data-bs-offset="0, 5"
@@ -27,11 +27,6 @@
                     </span>
                 </label>
                 <div class="col-sm-12 position-relative">
-                    <!-- <span class="has-tooltip">
-                        <input type="text" class="form-control number-field" id="gross-annual-income" name="grossAnnualIncome"  placeholder="Enter gross annual income" required>
-                        <span class="tooltip-message">Please enter a valid number.</span>
-                      </span> -->
-
                     <input type="text" class="form-control number-field" id="gross-annual-income"
                         placeholder="Enter gross annual income" required>
                     <span class="error-icon" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -132,6 +127,8 @@
                 <button class="btn btn-primary mt-2" type="submit">Submit form</button>
             </div>
         </form>
+
+        <!-- Modal -->
         <div class="modal fade" id="taxResultModal" tabindex="-1" aria-labelledby="taxResultModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -143,7 +140,7 @@
                     <div class="modal-body">
                         <div class="final-income mb-3">
                             <h2>Your final income is</h2><br>
-                            <h3 id="final-income-number"></h3><br>
+                            <h3 id="final-income-result"></h3><br>
                             <p>after tax deductions</p>
                         </div>
                         <ul class="list-group">
@@ -174,7 +171,7 @@
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -189,4 +186,5 @@
     <script src="./script.js"></script>
 
 </body>
+
 </html>

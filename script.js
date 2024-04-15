@@ -1,36 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   // Initialize Bootstrap tooltips
   const tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
-  const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Form submission event listener
+  // Form and form elements
   const form = document.querySelector(".tax-form");
+  const grossAnnualIncomeInput = document.getElementById("gross-annual-income");
+  const extraIncomeInput = document.getElementById("extra-income");
+  const ageGroupInput = document.getElementById("age-group");
+  const deductionsInput = document.getElementById("deductions");
 
+  const grossAnnualIncomeResult = document.getElementById("gross-annual-income-result");
+  const extraIncomeResult = document.getElementById("extra-income-result");
+  const deductionsResult = document.getElementById("deductions-result");
+  const taxableIncomeResult = document.getElementById("taxable-income-result");
+  const taxRateResult = document.getElementById("tax-rate-result");
+  const taxAmountResult = document.getElementById("tax-amount-result");
+  const finalIncomeResult = document.getElementById("final-income-result");
+
+  // Form submission event listener
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission
 
     // Validate inputs
     if (!validateInputs()) {
-      return; // Exit if inputs are not valid
+      return;   // Exit if inputs are not valid
     }
 
-    // Calculate tax
     const taxResults = calculateTax();
 
-    // Display results in modal
     displayResults(taxResults);
   });
 
   // Function to validate inputs
   function validateInputs() {
     // Validate gross annual income
-    const grossAnnualIncomeInput = document.getElementById(
-      "gross-annual-income"
-    );
     if (!isValidNumber(grossAnnualIncomeInput.value)) {
       displayError(grossAnnualIncomeInput);
       return false;
@@ -39,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate extra income
-    const extraIncomeInput = document.getElementById("extra-income");
     if (!isValidNumber(extraIncomeInput.value)) {
       displayError(extraIncomeInput);
       return false;
@@ -48,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate age group selection
-    const ageGroupInput = document.getElementById("age-group");
     if (!ageGroupInput.value) {
       displayError(ageGroupInput);
       return false;
@@ -57,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate deductions
-    const deductionsInput = document.getElementById("deductions");
     if (!isValidNumber(deductionsInput.value)) {
       displayError(deductionsInput);
       return false;
@@ -75,14 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to calculate tax
   function calculateTax() {
-    const grossAnnualIncome = parseFloat(
-      document.getElementById("gross-annual-income").value
-    );
-    const extraIncome = parseFloat(
-      document.getElementById("extra-income").value
-    );
-    const deductions = parseFloat(document.getElementById("deductions").value);
-    const ageGroup = document.getElementById("age-group").value;
+    const grossAnnualIncome = parseFloat(grossAnnualIncomeInput.value);
+    const extraIncome = parseFloat(extraIncomeInput.value);
+    const deductions = parseFloat(deductionsInput.value);
+    const ageGroup = ageGroupInput.value;
 
     let taxableIncome = grossAnnualIncome + extraIncome - deductions;
     let taxRate = 0;
@@ -120,22 +122,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to display results in the modal
   function displayResults(taxResults) {
-    
-    document.getElementById("gross-annual-income-result").textContent =
+    grossAnnualIncomeResult.textContent =
       taxResults.grossAnnualIncome.toFixed(2);
-    document.getElementById("extra-income-result").textContent =
-      taxResults.extraIncome.toFixed(2);
-    document.getElementById("deductions-result").textContent =
-      taxResults.deductions.toFixed(2);
-    document.getElementById("taxable-income-result").textContent =
-      taxResults.taxableIncome.toFixed(2);
-    document.getElementById("tax-rate-result").textContent =
-      (taxResults.taxRate * 100).toFixed(2) + "%";
-    document.getElementById("tax-amount-result").textContent =
-      taxResults.taxAmount.toFixed(2);
-      console.log(document.getElementById("final-income-number"));
-    document.getElementById("final-income-number").textContent =
-    taxResults.taxableIncome.toFixed(2) - taxResults.taxAmount.toFixed(2);;
+    extraIncomeResult.textContent = taxResults.extraIncome.toFixed(2);
+    deductionsResult.textContent = taxResults.deductions.toFixed(2);
+    taxableIncomeResult.textContent = taxResults.taxableIncome.toFixed(2);
+    taxRateResult.textContent = (taxResults.taxRate * 100).toFixed(2) + "%";
+    taxAmountResult.textContent = taxResults.taxAmount.toFixed(2);
+    finalIncomeResult.textContent =
+      taxResults.taxableIncome.toFixed(2) - taxResults.taxAmount.toFixed(2);
 
     const taxResultModal = new bootstrap.Modal(
       document.getElementById("taxResultModal")
@@ -148,14 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorIcon = inputField.parentElement.querySelector(".error-icon");
     errorIcon.classList.add("visible"); // Show error icon
     //inputField.classList.add("is-invalid"); // Mark input field as invalid (bootstrap based validation)
-
   }
 
   // Function to hide error for an input field
   function hideError(inputField) {
     const errorIcon = inputField.parentElement.querySelector(".error-icon");
     errorIcon.classList.remove("visible"); // Hide error icon
-    inputField.classList.remove("is-invalid"); // Mark input field as valid
+    //inputField.classList.remove("is-invalid"); // Mark input field as valid
 
     // Get the tooltip instance and hide it
     const tooltip = bootstrap.Tooltip.getInstance(errorIcon);
